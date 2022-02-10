@@ -2,6 +2,7 @@ import {
     redirectIfLoggedIn, 
     signInUser, 
     signupUser,
+    getFoods,
 } from './fetch-utils.js';
 
 const signInForm = document.getElementById('sign-in');
@@ -36,3 +37,5 @@ signInForm.addEventListener('submit', async(event)=>{
         console.error(user);
     }
 });
+
+getFoods();
