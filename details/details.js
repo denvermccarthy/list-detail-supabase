@@ -1,5 +1,5 @@
-import { getFoodById } from "../fetch-utils.js";
-import { renderDetails } from "../render-utils.js";
+import { getFoodById } from '../fetch-utils.js';
+import { renderDetails } from '../render-utils.js';
 
 const header = document.getElementById('header');
 const displayEl = document.getElementById('display');
