@@ -13,9 +13,3 @@ export async function getFoods() {
     console.log(resp);
     return checkError(resp);
 }
-
-export async function getFoodByTier(tier) {
-    const resp = await client.from('breakfast_foods').select('*').ilike('tier', tier);
-    console.log(resp);
-    return checkError(resp);
-}
