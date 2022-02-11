@@ -4,9 +4,11 @@ import {
 } from './fetch-utils.js';
 
 
-
-
-
+function appendFoodByTier(html, object) {
+    const destination = document.getElementById(`${object.tier}-items`); 
+    console.log('destination', destination);
+    destination.append(html);
+}
 
 
 function displayFood(object) {
@@ -14,7 +16,6 @@ function displayFood(object) {
     const div = document.createElement('div');
     const h4 = document.createElement('h4');
     const img = document.createElement('img');
-
     h4.textContent = object.name;
     img.src = `/assets/${object.name}`;
     div.append(h4, img);
@@ -37,22 +38,9 @@ function displayFood(object) {
 
 window.addEventListener('load', async() => {
     const food = await getFoods();
-    console.log('hey', food);
-    
-
-    for (let item of food) {
-        console.log('items', item);
-        
-        let destination = document.getElementById(`${item.tier}-items`);
-        console.log('destination', destination);
-
-        const html = displayFood(item);
-        console.log('html', html);
-
-        destination.append(html);
-    }
-    // const cTier = await getFoodByTier('c');
-    // console.log('hy', cTier);
+    food.forEach((item) => {
+        appendFoodByTier(displayFood(item), item);
+    });
 });
 
 // function appendFoodById(html, object) {
@@ -60,4 +48,16 @@ window.addEventListener('load', async() => {
 //     console.log('destination', destination);
 //     await destination.append(html);
 //     return destination;
+// }
+
+// for (let item of food) {
+//     console.log('items', item);
+    
+//     let destination = document.getElementById(`${item.tier}-items`);
+//     console.log('destination', destination);
+    
+//     const html = displayFood(item);
+//     console.log('html', html);
+
+//     destination.append(html);
 // }
