@@ -1,1 +1,40 @@
 /* add home page styles here */
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2 {
+    display: flex;
+    align-self: center;
+}
+
+img {
+    max-height: 10vh;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+    "s s-items"
+    "a a-items"
+    "b b-items"
+    "c c-items"
+    ;
+}
+
+.grid-container div {
+    border: 1px solid black;
+}
+
+
+
