@@ -16,6 +16,10 @@ h1, h2 {
     align-self: center;
 }
 
+img {
+    max-height: 10vh;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 3fr;
