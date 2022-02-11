@@ -10,12 +10,10 @@ function checkError({ data, error }) {
 
 export async function getFoods() {
     const resp = await client.from('breakfast_foods').select('*');
-    console.log(resp);
     return checkError(resp);
 }
 
 export async function getFoodById(id) {
     const resp = await client.from('breakfast_foods').select('*').eq('id', id).single();
-    console.log(resp);
     return checkError(resp);
 }
