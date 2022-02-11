@@ -13,3 +13,9 @@ export async function getFoods() {
     console.log(resp);
     return checkError(resp);
 }
+
+export async function getFoodById(id) {
+    const resp = await client.from('breakfast_foods').select('*').eq('id', id).single();
+    console.log(resp);
+    return checkError(resp);
+}

@@ -24,7 +24,7 @@ export function renderDetails(object) {
     a.href = `https://www.google.com/maps/search/${object.name}/`;    
     h2.textContent = object.name;
     img.src = `/assets/${object.name}.jpg`;
-    tier.textContent = object.tier;
+    tier.textContent = `Tier: ${object.tier}`;
     description.textContent = object.about;
     div.append(h2, img, tier, description);
     a.append(div);
